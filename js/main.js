@@ -15,6 +15,7 @@ console.log(`el número generado es ${randomNumber}`);
 
 function testNumber() {
   const numInsertVal = parseInt(numInsertUser.value);
+  /* console.log(${numInsertVal}); */
   let trackMessage = '';
   if (randomNumber === numInsertVal) {
     trackMessage = 'Has ganado campeona!!!';
