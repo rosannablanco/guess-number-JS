@@ -16,15 +16,18 @@ console.log(`el número generado es ${randomNumber}`);
 function testNumber() {
   const numInsertVal = parseInt(numInsertUser.value);
   let trackMessage = '';
-  if (randomNumber === numInsertVal) {
-    trackMessage = 'Has ganado campeona!!!';
-  } else if (randomNumber > numInsertVal) {
-    trackMessage = 'Pista: demasiado bajo';
-  } else if (randomNumber < numInsertVal) {
-    trackMessage = 'Pista: demasiado alto';
+  if (numInsertVal <= 100 && numInsertVal >= 1) {
+    if (randomNumber === numInsertVal) {
+      trackMessage = 'Has ganado campeona!!!';
+    } else if (randomNumber > numInsertVal) {
+      trackMessage = 'Pista: demasiado bajo';
+    } else if (randomNumber < numInsertVal) {
+      trackMessage = 'Pista: demasiado alto';
+    }
   } else {
-    trackMessage = 'Pista: es un número es invalid';
+    trackMessage = 'Pista: el número debe estar entre 1 y 100';
   }
+
   countClicks++;
   textTrack.innerHTML = trackMessage;
   textCount.innerHTML = `Número de intentos: ${countClicks}`;
